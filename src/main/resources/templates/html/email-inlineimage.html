@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:remove="all">Template for HTML email with inline image</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    </head>
+    <body>
+    <div>
+    <p>
+        <img src="../../static/image.png" th:src="|cid:${imageResourceName}|" />
+        
+        </p>
+        <h1 style="background-color:#a4c0f4;">Add email subject</h1> </div>
+        <p  Dear th:text="${name}">Customer Name</p>
+        <p>
+        
+        </p>
+        <p th:if="${name.length() gt 10}">
+            Wow! You've got a long name (more than 10 chars)! <br />
+        </p>
+        <p>
+		Your have subscribed to our blogs as of  <b><span
+			th:text="${#calendars.format(contractDate,'MMMM yyyy')}">August 2019</span></b>.
+	</p>
+	
+	<p>Your subjects of interest are:</p>
+	<ul th:remove="all-but-first">
+		<li th:each="topic : ${topics}" th:text="${topic}">Spring</li>
+		<li>BasketBall</li>
+		<li>Politics</li>
+	</ul>
+	<p>
+		Regards, <br /> &emsp; <em>The Team</em>
+	</p>
+	<div align="center">
+	<h5>footer</h5>
+</div>
+    </body>
+</html>

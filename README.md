@@ -5,7 +5,7 @@ With Spring Boot and Thymeleaf an email service with ability to send different k
 This project can help with personalizing email sender, send company branded emails, avoid using email providers, 
 avoid exposure of customer email addresses, eliminate the issue of emails tagged as spam or even worse blocked by email providers.
 
-Modify SpringMailConfig file to configure the SMTP server your choose to use.
+Modify SpringMailConfig file to configure the SMTP server you choose to use.
 
 Create HTML template files with email content as required.
 
